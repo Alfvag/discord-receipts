@@ -24,7 +24,7 @@ A Flask-based local web service that prints Discord messages to a thermal receip
 ## Prerequisites
 
 - Python 3.6+
-- Packages: flask, python-escpos, python-dotenv
+- Packages: flask, [python-escpos](https://github.com/python-escpos/python-escpos), python-dotenv
 - Network-connected thermal receipt printer (compatible with ESC/POS). Could easily be rewritten to use USB or Serial
 - ngrok account (for the authentication token)
 
@@ -32,7 +32,7 @@ A Flask-based local web service that prints Discord messages to a thermal receip
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/AlexanderAlfvag/discord-receipts.git
+   git clone https://github.com/Alfvag/discord-receipts.git
    cd discord-receipts
 
 2. Install dependencies:
