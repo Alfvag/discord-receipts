@@ -13,12 +13,10 @@ A Flask-based local web service that prints Discord messages to a thermal receip
 - I tested it using Zapiers free tier which works fine
 - Set it up so that it sends a POST request to the ngrok link generated on startup. The payload should be JSON and contain:
 ``` JSON
-    "data": [
-        {
-            "name": String,
-            "message": String
-        }
-    ]
+    {
+        "name": String,
+        "message": String
+    }
 ```
 
 ## Prerequisites
