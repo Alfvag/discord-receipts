@@ -25,11 +25,15 @@ print(f"Public URL: {public_url}")
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
-    data = request.json  # Get JSON data from POST request
-    print(f"Received webhook data: {data}")
+    # Get JSON data from the request
+    data = request.json
 
-    printer.text("TEST\n")
-    printer.barcode('4006381333931', 'EAN13', 64, 2, '', '')
+    # Check if data is valid
+    if not data:
+        return jsonify({"error": "No data provided"}), 400
+
+    # Print name and message, send cut command to the printer
+    printer.text(f"{data.get('name', 'Unknown')}: {data.get('message', 'No message provided')}\n")
     printer.cut()
 
     return jsonify({"status": "success", "received": data}), 200
